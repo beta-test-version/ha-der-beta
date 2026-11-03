@@ -1,0 +1,21 @@
+{
+  "domain": "ecoflow_modbus",
+  "name": "ha EcoFlow official",
+  "codeowners": [
+    "@arrow-lu"
+  ],
+  "config_flow": true,
+  "after_dependencies": [
+    "modbus",
+    "frontend"
+  ],
+  "dependencies": [
+    "zeroconf"
+  ],
+  "documentation": "https://github.com/EcoFlow/modbus-API",
+  "iot_class": "local_polling",
+  "version": "1.2.0",
+  "zeroconf": [
+    "_ecoflow._tcp.local."
+  ]
+}

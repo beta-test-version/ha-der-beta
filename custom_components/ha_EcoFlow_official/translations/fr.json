@@ -1,0 +1,695 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connexion ha EcoFlow official",
+        "description": "Entrez l'adresse de l'onduleur EcoFlow ou du simulateur Modbus",
+        "data": {
+          "host": "Adresse IP",
+          "port": "Port",
+          "unit_id": "Identifiant d'unité",
+          "scan_interval": "Intervalle de scrutation (secondes)"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "Appareil ha EcoFlow official découvert",
+        "description": "{name} trouvé. L'ajouter ?"
+      }
+    },
+    "error": {
+      "cannot_connect": "Connexion impossible. Vérifiez l'adresse IP/port et que l'appareil est en marche"
+    },
+    "abort": {
+      "already_configured": "Cet appareil est déjà configuré"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reg_0000": {
+        "name": "D1. Version du protocole"
+      },
+      "reg_0001": {
+        "name": "D1. Type de phase du système",
+        "state": {
+          "1": "Système triphasé",
+          "2": "Système monophasé"
+        }
+      },
+      "reg_0002": {
+        "name": "D1. Numéro de produit"
+      },
+      "reg_0003": {
+        "name": "D1. Numéro de série de l'appareil (SN)"
+      },
+      "reg_000b": {
+        "name": "D1. Version du micrologiciel"
+      },
+      "reg_000e": {
+        "name": "D1. Fabricant"
+      },
+      "reg_0016": {
+        "name": "S3. Puissance active totale de l'onduleur"
+      },
+      "reg_0017": {
+        "name": "S2. Puissance réactive totale de l'onduleur"
+      },
+      "reg_0200": {
+        "name": "D5. Code réseau"
+      },
+      "reg_0201": {
+        "name": "D1. Heure UTC"
+      },
+      "reg_0205": {
+        "name": "D1. Fuseau horaire"
+      },
+      "reg_0206": {
+        "name": "S2. Puissance consommée du système"
+      },
+      "reg_0208": {
+        "name": "S2. Puissance réseau du système"
+      },
+      "reg_020a": {
+        "name": "S2. Puissance photovoltaïque du système"
+      },
+      "reg_020c": {
+        "name": "S2. Puissance de la batterie du système"
+      },
+      "reg_020e": {
+        "name": "S2. SOC du système"
+      },
+      "reg_020f": {
+        "name": "S3. Puissance nominale du système"
+      },
+      "reg_0211": {
+        "name": "D1. État du système 1"
+      },
+      "reg_0213": {
+        "name": "D1. État du système 2"
+      },
+      "reg_0221": {
+        "name": "S3. Puissance active de sortie max"
+      },
+      "reg_0223": {
+        "name": "S3. Puissance active d'entrée max"
+      },
+      "reg_0225": {
+        "name": "S3. Puissance de sortie de l'onduleur"
+      },
+      "reg_0227": {
+        "name": "S3. Capacité totale de la batterie"
+      },
+      "reg_0229": {
+        "name": "S3. Capacité de décharge de la batterie"
+      },
+      "reg_022b": {
+        "name": "S3. Capacité de charge de la batterie"
+      },
+      "reg_022e": {
+        "name": "S3. Courant réseau phase A"
+      },
+      "reg_0230": {
+        "name": "S3. Courant réseau phase B"
+      },
+      "reg_0232": {
+        "name": "S3. Courant réseau phase C"
+      },
+      "reg_0234": {
+        "name": "S3. Tension phase A"
+      },
+      "reg_0236": {
+        "name": "S3. Tension phase B"
+      },
+      "reg_0238": {
+        "name": "S3. Tension phase C"
+      },
+      "reg_023d": {
+        "name": "D3. Tension de la batterie"
+      },
+      "reg_023f": {
+        "name": "D3. Courant de la batterie"
+      },
+      "reg_0241": {
+        "name": "D3. Température de la batterie"
+      },
+      "reg_0243": {
+        "name": "D5. Tension onduleur phase A"
+      },
+      "reg_0245": {
+        "name": "D5. Tension onduleur phase B"
+      },
+      "reg_0247": {
+        "name": "D5. Tension onduleur phase C"
+      },
+      "reg_0249": {
+        "name": "D5. Courant onduleur phase A"
+      },
+      "reg_024b": {
+        "name": "D5. Courant onduleur phase B"
+      },
+      "reg_024d": {
+        "name": "D5. Courant onduleur phase C"
+      },
+      "reg_024f": {
+        "name": "D5. Température de l'onduleur"
+      },
+      "reg_0251": {
+        "name": "D5. Fréquence de l'onduleur"
+      },
+      "reg_0253": {
+        "name": "D2. Tension PV1"
+      },
+      "reg_0255": {
+        "name": "D2. Tension PV2"
+      },
+      "reg_0257": {
+        "name": "D2. Tension PV3"
+      },
+      "reg_0259": {
+        "name": "D2. Courant PV1"
+      },
+      "reg_025b": {
+        "name": "D2. Courant PV2"
+      },
+      "reg_025d": {
+        "name": "D2. Courant PV3"
+      },
+      "reg_0260": {
+        "name": "S3. Puissance d'injection max effective"
+      },
+      "reg_0262": {
+        "name": "D3. État de la batterie"
+      },
+      "reg_0264": {
+        "name": "S2. Puissance réactive (système)"
+      },
+      "reg_0266": {
+        "name": "S3. Puissance active nominale max"
+      },
+      "reg_0267": {
+        "name": "S3. Puissance apparente max"
+      },
+      "reg_0268": {
+        "name": "S3. Puissance réactive de sortie max"
+      },
+      "reg_0269": {
+        "name": "S3. Puissance réactive d'entrée max"
+      },
+      "reg_0270": {
+        "name": "S3. Limite PF (fourniture réactive)"
+      },
+      "reg_0271": {
+        "name": "S3. Limite PF (absorption réactive)"
+      },
+      "reg_0272": {
+        "name": "D3. Capacité de charge max"
+      },
+      "reg_0273": {
+        "name": "D3. Capacité de décharge max"
+      },
+      "reg_0800": {
+        "name": "S1. Nombre de défauts système en cours"
+      },
+      "reg_0801": {
+        "name": "S1. Code défaut système 1"
+      },
+      "reg_0802": {
+        "name": "S1. Code défaut système 2"
+      },
+      "reg_0803": {
+        "name": "S1. Code défaut système 3"
+      },
+      "reg_0804": {
+        "name": "S1. Code défaut système 4"
+      },
+      "reg_0805": {
+        "name": "S1. Code défaut système 5"
+      },
+      "reg_0806": {
+        "name": "S1. Code défaut système 6"
+      },
+      "reg_0807": {
+        "name": "S1. Code défaut système 7"
+      },
+      "reg_0808": {
+        "name": "S1. Code défaut système 8"
+      },
+      "reg_0809": {
+        "name": "S1. Code défaut système 9"
+      },
+      "reg_080a": {
+        "name": "S1. Code défaut système 10"
+      },
+      "reg_080b": {
+        "name": "S1. Code défaut système 11"
+      },
+      "reg_080c": {
+        "name": "S1. Code défaut système 12"
+      },
+      "reg_080d": {
+        "name": "S1. Code défaut système 13"
+      },
+      "reg_080e": {
+        "name": "S1. Code défaut système 14"
+      },
+      "reg_080f": {
+        "name": "S1. Code défaut système 15"
+      },
+      "reg_0810": {
+        "name": "S1. Code défaut système 16"
+      },
+      "reg_0811": {
+        "name": "S1. Code défaut système 17"
+      },
+      "reg_0812": {
+        "name": "S1. Code défaut système 18"
+      },
+      "reg_0813": {
+        "name": "S1. Code défaut système 19"
+      },
+      "reg_0814": {
+        "name": "S1. Code défaut système 20"
+      },
+      "reg_0820": {
+        "name": "D4. Nombre de batteries en ligne"
+      },
+      "reg_0821": {
+        "name": "D4. Batterie 1 SOC"
+      },
+      "reg_0822": {
+        "name": "D4. Batterie 2 SOC"
+      },
+      "reg_0823": {
+        "name": "D4. Batterie 3 SOC"
+      },
+      "reg_0824": {
+        "name": "D4. Batterie 4 SOC"
+      },
+      "reg_0825": {
+        "name": "D4. Batterie 5 SOC"
+      },
+      "reg_0826": {
+        "name": "D4. Batterie 6 SOC"
+      },
+      "reg_0827": {
+        "name": "D4. Batterie 7 SOC"
+      },
+      "reg_0828": {
+        "name": "D4. Batterie 8 SOC"
+      },
+      "reg_0829": {
+        "name": "D4. Batterie 9 SOC"
+      },
+      "reg_082a": {
+        "name": "D4. Batterie 10 SOC"
+      },
+      "reg_082b": {
+        "name": "D4. Batterie 11 SOC"
+      },
+      "reg_082c": {
+        "name": "D4. Batterie 12 SOC"
+      },
+      "reg_0840": {
+        "name": "S4. Énergie totale du compteur (aujourd'hui)"
+      },
+      "reg_0850": {
+        "name": "S4. Énergie totale de l'onduleur (aujourd'hui)"
+      },
+      "reg_0860": {
+        "name": "S4. Énergie totale de la batterie (aujourd'hui)"
+      },
+      "reg_0870": {
+        "name": "S4. Énergie importée du réseau (total)"
+      },
+      "reg_0872": {
+        "name": "S4. Importation réseau (aujourd'hui)"
+      },
+      "reg_0880": {
+        "name": "S4. Énergie exportée vers le réseau (total)"
+      },
+      "reg_0882": {
+        "name": "S4. Exportation réseau (aujourd'hui)"
+      },
+      "reg_0890": {
+        "name": "S4. Énergie de charge onduleur (total)"
+      },
+      "reg_0892": {
+        "name": "S4. Charge onduleur (aujourd'hui)"
+      },
+      "reg_08a0": {
+        "name": "S4. Énergie de décharge onduleur (total)"
+      },
+      "reg_08a2": {
+        "name": "S4. Décharge onduleur (aujourd'hui)"
+      },
+      "reg_08b0": {
+        "name": "S4. Énergie de charge batterie (total)"
+      },
+      "reg_08b2": {
+        "name": "S4. Charge batterie (aujourd'hui)"
+      },
+      "reg_08c0": {
+        "name": "S4. Énergie de décharge batterie (total)"
+      },
+      "reg_08c2": {
+        "name": "S4. Décharge batterie (aujourd'hui)"
+      },
+      "reg_08d0": {
+        "name": "S4. Énergie solaire (total)"
+      },
+      "reg_08d2": {
+        "name": "S4. Énergie solaire (aujourd'hui)"
+      },
+      "reg_1000": {
+        "name": "S1. Nombre d'appareils du système"
+      },
+      "reg_1001": {
+        "name": "D1. Indicateur maître du système"
+      },
+      "reg_1002": {
+        "name": "S1. Nombre d’appareils du système en ligne"
+      },
+      "reg_1200": {
+        "name": "S4. Consommation du foyer (total)"
+      },
+      "reg_1202": {
+        "name": "S4. Consommation du foyer (aujourd'hui)"
+      },
+      "reg_1300": {
+        "name": "S3. Puissance active phase A"
+      },
+      "reg_1302": {
+        "name": "S3. Puissance active phase B"
+      },
+      "reg_1304": {
+        "name": "S3. Puissance active phase C"
+      },
+      "reg_1400": {
+        "name": "S3. Capacité de charge de la batterie"
+      },
+      "reg_1401": {
+        "name": "S3. Capacité de décharge de la batterie"
+      },
+      "reg_2010": {
+        "name": "D1. Nombre d'erreurs de l'appareil"
+      },
+      "reg_2011": {
+        "name": "D1. Code erreur appareil 1"
+      },
+      "reg_2012": {
+        "name": "D1. Code erreur appareil 2"
+      },
+      "reg_2013": {
+        "name": "D1. Code erreur appareil 3"
+      },
+      "reg_2014": {
+        "name": "D1. Code erreur appareil 4"
+      },
+      "reg_2015": {
+        "name": "D1. Code erreur appareil 5"
+      },
+      "reg_2016": {
+        "name": "D1. Code erreur appareil 6"
+      },
+      "reg_2017": {
+        "name": "D1. Code erreur appareil 7"
+      },
+      "reg_2018": {
+        "name": "D1. Code erreur appareil 8"
+      },
+      "reg_2019": {
+        "name": "D1. Code erreur appareil 9"
+      },
+      "reg_201a": {
+        "name": "D1. Code erreur appareil 10"
+      },
+      "reg_2100": {
+        "name": "D2. Tension PV4"
+      },
+      "reg_2102": {
+        "name": "D2. Courant PV4"
+      },
+      "reg_2104": {
+        "name": "D2. Puissance PV1"
+      },
+      "reg_2106": {
+        "name": "D2. Puissance PV2"
+      },
+      "reg_2108": {
+        "name": "D2. Puissance PV3"
+      },
+      "reg_210a": {
+        "name": "D2. Puissance PV4"
+      },
+      "reg_2202": {
+        "name": "D3. Température minimale des cellules"
+      },
+      "reg_2204": {
+        "name": "D3. Température maximale des cellules"
+      },
+      "reg_2206": {
+        "name": "D3. Tension max de cellule"
+      },
+      "reg_2207": {
+        "name": "D3. Tension min de cellule"
+      },
+      "reg_2300": {
+        "name": "D4. Batterie 1 SOH"
+      },
+      "reg_2301": {
+        "name": "D4. Batterie 2 SOH"
+      },
+      "reg_2302": {
+        "name": "D4. Batterie 3 SOH"
+      },
+      "reg_2303": {
+        "name": "D4. Batterie 4 SOH"
+      },
+      "reg_2304": {
+        "name": "D4. Batterie 5 SOH"
+      },
+      "reg_2305": {
+        "name": "D4. Batterie 6 SOH"
+      },
+      "reg_2306": {
+        "name": "D4. Batterie 7 SOH"
+      },
+      "reg_2307": {
+        "name": "D4. Batterie 8 SOH"
+      },
+      "reg_2308": {
+        "name": "D4. Batterie 9 SOH"
+      },
+      "reg_2309": {
+        "name": "D4. Batterie 10 SOH"
+      },
+      "reg_230a": {
+        "name": "D4. Batterie 11 SOH"
+      },
+      "reg_230b": {
+        "name": "D4. Batterie 12 SOH"
+      },
+      "reg_2310": {
+        "name": "D4. Batterie 1 SN"
+      },
+      "reg_2318": {
+        "name": "D4. Batterie 2 SN"
+      },
+      "reg_2320": {
+        "name": "D4. Batterie 3 SN"
+      },
+      "reg_2328": {
+        "name": "D4. Batterie 4 SN"
+      },
+      "reg_2330": {
+        "name": "D4. Batterie 5 SN"
+      },
+      "reg_2338": {
+        "name": "D4. Batterie 6 SN"
+      },
+      "reg_2340": {
+        "name": "D4. Batterie 7 SN"
+      },
+      "reg_2348": {
+        "name": "D4. Batterie 8 SN"
+      },
+      "reg_2350": {
+        "name": "D4. Batterie 9 SN"
+      },
+      "reg_2358": {
+        "name": "D4. Batterie 10 SN"
+      },
+      "reg_2360": {
+        "name": "D4. Batterie 11 SN"
+      },
+      "reg_2368": {
+        "name": "D4. Batterie 12 SN"
+      },
+      "reg_2400": {
+        "name": "D5. État réseau/hors réseau",
+        "state": {
+          "0": "Hors réseau",
+          "1": "Connecté au réseau"
+        }
+      },
+      "reg_2401": {
+        "name": "D5. Puissance bypass AC1"
+      },
+      "reg_2404": {
+        "name": "D5. Puissance bypass AC2"
+      },
+      "reg_2407": {
+        "name": "D5. Puissance bypass AC3"
+      }
+    },
+    "number": {
+      "reg_000d": {
+        "name": "D1. Adresse de communication de l'appareil"
+      },
+      "reg_0215": {
+        "name": "S3. Commande de contrôle du système"
+      },
+      "reg_0217": {
+        "name": "S3. Ratio de réserve de secours"
+      },
+      "reg_0219": {
+        "name": "S3. Puissance d'injection réseau max"
+      },
+      "reg_021b": {
+        "name": "S3. Capacité du disjoncteur"
+      },
+      "reg_021c": {
+        "name": "D6. Luminosité LED"
+      },
+      "reg_021d": {
+        "name": "S3. Consigne de puissance du système"
+      },
+      "reg_021f": {
+        "name": "S3. Consigne de puissance de l'onduleur"
+      },
+      "reg_023a": {
+        "name": "S3. Consigne de charge/décharge de la batterie"
+      },
+      "reg_023c": {
+        "name": "S3. Pourcentage limite d'injection"
+      },
+      "reg_0274": {
+        "name": "D5. Pourcentage de sortie active de l'onduleur"
+      },
+      "reg_1003": {
+        "name": "D1. Priorité d'élection du maître"
+      },
+      "reg_1600": {
+        "name": "S3. Limite de puissance de charge batterie"
+      },
+      "reg_1602": {
+        "name": "S3. Limite de puissance de décharge batterie"
+      },
+      "reg_1604": {
+        "name": "S3. Limite de puissance d'importation réseau"
+      },
+      "reg_1606": {
+        "name": "S3. Limite de puissance d'exportation réseau"
+      },
+      "reg_1608": {
+        "name": "S3. Limite de puissance de sortie onduleur"
+      },
+      "reg_160a": {
+        "name": "S3. Limite de puissance d'entrée onduleur"
+      },
+      "reg_160c": {
+        "name": "S3. Limite de puissance de sortie port réseau"
+      },
+      "reg_160e": {
+        "name": "S3. Limite de puissance d'entrée port réseau"
+      },
+      "reg_1611": {
+        "name": "S3. Puissance cible batterie"
+      },
+      "reg_1612": {
+        "name": "S3. Puissance cible compteur"
+      },
+      "reg_1613": {
+        "name": "S3. Puissance cible onduleur"
+      },
+      "reg_1614": {
+        "name": "S3. Puissance cible port réseau"
+      },
+      "reg_2200": {
+        "name": "S3. Limite basse SOC"
+      },
+      "reg_2201": {
+        "name": "S3. Limite haute SOC"
+      }
+    },
+    "select": {
+      "reg_0218": {
+        "name": "S3. Mode d'injection réseau",
+        "state": {
+          "0": "Mode limité",
+          "1": "Mode illimité",
+          "2": "Limite en pourcentage"
+        }
+      },
+      "reg_022d": {
+        "name": "S3. Mode de fonctionnement du système",
+        "state": {
+          "1": "Autoconsommation",
+          "2": "Mode AI"
+        }
+      },
+      "reg_0263": {
+        "name": "S3. Mode de contrôle de la batterie",
+        "state": {
+          "0": "Distant",
+          "1": "Local"
+        }
+      },
+      "reg_0275": {
+        "name": "S3. Mode de contrôle VPP (AU)",
+        "state": {
+          "0": "Autoconsommation",
+          "1": "Puissance système",
+          "2": "Puissance onduleur",
+          "3": "Puissance batterie"
+        }
+      },
+      "reg_0277": {
+        "name": "S3. Interrupteur de puissance batterie (AU)",
+        "state": {
+          "0": "Charge et décharge autorisées",
+          "1": "Charge désactivée",
+          "2": "Décharge désactivée",
+          "3": "Les deux désactivés"
+        }
+      },
+      "reg_1610": {
+        "name": "S3. Point de contrôle",
+        "state": {
+          "0": "Aucun",
+          "1": "Point batterie",
+          "2": "Point compteur",
+          "3": "Point onduleur",
+          "4": "Point réseau"
+        }
+      }
+    },
+    "switch": {
+      "reg_0276": {
+        "name": "S3. Interrupteur de démarrage progressif (AU)"
+      },
+      "reg_0278": {
+        "name": "S3. Forcer hors réseau (AU)"
+      },
+      "reg_2403": {
+        "name": "D6. Interrupteur bypass AC1"
+      },
+      "reg_2406": {
+        "name": "D6. Interrupteur bypass AC2"
+      },
+      "reg_2409": {
+        "name": "D6. Interrupteur bypass AC3"
+      }
+    }
+  }
+}

@@ -1,0 +1,695 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect ha EcoFlow official",
+        "description": "Enter the address of the EcoFlow inverter or Modbus simulator",
+        "data": {
+          "host": "IP address",
+          "port": "Port",
+          "unit_id": "Unit ID",
+          "scan_interval": "Scan interval (seconds)"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "ha EcoFlow official device discovered",
+        "description": "Found {name}. Add it?"
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect. Check IP/port and that the device is running"
+    },
+    "abort": {
+      "already_configured": "This device is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reg_0000": {
+        "name": "D1. Protocol version"
+      },
+      "reg_0001": {
+        "name": "D1. System phase type",
+        "state": {
+          "1": "Three-phase system",
+          "2": "Single-phase system"
+        }
+      },
+      "reg_0002": {
+        "name": "D1. Product number"
+      },
+      "reg_0003": {
+        "name": "D1. Device serial number (SN)"
+      },
+      "reg_000b": {
+        "name": "D1. Firmware version"
+      },
+      "reg_000e": {
+        "name": "D1. Manufacturer"
+      },
+      "reg_0016": {
+        "name": "S3. Inverter total active power"
+      },
+      "reg_0017": {
+        "name": "S2. Inverter total reactive power"
+      },
+      "reg_0200": {
+        "name": "D5. Grid code"
+      },
+      "reg_0201": {
+        "name": "D1. UTC time"
+      },
+      "reg_0205": {
+        "name": "D1. Time zone"
+      },
+      "reg_0206": {
+        "name": "S2. System consumption power"
+      },
+      "reg_0208": {
+        "name": "S2. System grid power"
+      },
+      "reg_020a": {
+        "name": "S2. System PV power"
+      },
+      "reg_020c": {
+        "name": "S2. System battery power"
+      },
+      "reg_020e": {
+        "name": "S2. System SOC"
+      },
+      "reg_020f": {
+        "name": "S3. System rated power"
+      },
+      "reg_0211": {
+        "name": "D1. System status 1"
+      },
+      "reg_0213": {
+        "name": "D1. System status 2"
+      },
+      "reg_0221": {
+        "name": "S3. Max active output power"
+      },
+      "reg_0223": {
+        "name": "S3. Max active input power"
+      },
+      "reg_0225": {
+        "name": "S3. Inverter output power"
+      },
+      "reg_0227": {
+        "name": "S3. Battery full capacity"
+      },
+      "reg_0229": {
+        "name": "S3. Battery discharge capacity"
+      },
+      "reg_022b": {
+        "name": "S3. Battery charge capacity"
+      },
+      "reg_022e": {
+        "name": "S3. Grid phase A current"
+      },
+      "reg_0230": {
+        "name": "S3. Grid phase B current"
+      },
+      "reg_0232": {
+        "name": "S3. Grid phase C current"
+      },
+      "reg_0234": {
+        "name": "S3. Phase A voltage"
+      },
+      "reg_0236": {
+        "name": "S3. Phase B voltage"
+      },
+      "reg_0238": {
+        "name": "S3. Phase C voltage"
+      },
+      "reg_023d": {
+        "name": "D3. Battery voltage"
+      },
+      "reg_023f": {
+        "name": "D3. Battery current"
+      },
+      "reg_0241": {
+        "name": "D3. Battery temperature"
+      },
+      "reg_0243": {
+        "name": "D5. Inverter phase A voltage"
+      },
+      "reg_0245": {
+        "name": "D5. Inverter phase B voltage"
+      },
+      "reg_0247": {
+        "name": "D5. Inverter phase C voltage"
+      },
+      "reg_0249": {
+        "name": "D5. Inverter phase A current"
+      },
+      "reg_024b": {
+        "name": "D5. Inverter phase B current"
+      },
+      "reg_024d": {
+        "name": "D5. Inverter phase C current"
+      },
+      "reg_024f": {
+        "name": "D5. Inverter temperature"
+      },
+      "reg_0251": {
+        "name": "D5. Inverter frequency"
+      },
+      "reg_0253": {
+        "name": "D2. PV1 voltage"
+      },
+      "reg_0255": {
+        "name": "D2. PV2 voltage"
+      },
+      "reg_0257": {
+        "name": "D2. PV3 voltage"
+      },
+      "reg_0259": {
+        "name": "D2. PV1 current"
+      },
+      "reg_025b": {
+        "name": "D2. PV2 current"
+      },
+      "reg_025d": {
+        "name": "D2. PV3 current"
+      },
+      "reg_0260": {
+        "name": "S3. Effective max feed-in power"
+      },
+      "reg_0262": {
+        "name": "D3. Battery state"
+      },
+      "reg_0264": {
+        "name": "S2. Reactive power (system)"
+      },
+      "reg_0266": {
+        "name": "S3. Rated max active power"
+      },
+      "reg_0267": {
+        "name": "S3. Max apparent power"
+      },
+      "reg_0268": {
+        "name": "S3. Max reactive output power"
+      },
+      "reg_0269": {
+        "name": "S3. Max reactive input power"
+      },
+      "reg_0270": {
+        "name": "S3. PF limit (supplying reactive)"
+      },
+      "reg_0271": {
+        "name": "S3. PF limit (absorbing reactive)"
+      },
+      "reg_0272": {
+        "name": "D3. Max charge capability"
+      },
+      "reg_0273": {
+        "name": "D3. Max discharge capability"
+      },
+      "reg_0800": {
+        "name": "S1. Current system fault count"
+      },
+      "reg_0801": {
+        "name": "S1. System fault code 1"
+      },
+      "reg_0802": {
+        "name": "S1. System fault code 2"
+      },
+      "reg_0803": {
+        "name": "S1. System fault code 3"
+      },
+      "reg_0804": {
+        "name": "S1. System fault code 4"
+      },
+      "reg_0805": {
+        "name": "S1. System fault code 5"
+      },
+      "reg_0806": {
+        "name": "S1. System fault code 6"
+      },
+      "reg_0807": {
+        "name": "S1. System fault code 7"
+      },
+      "reg_0808": {
+        "name": "S1. System fault code 8"
+      },
+      "reg_0809": {
+        "name": "S1. System fault code 9"
+      },
+      "reg_080a": {
+        "name": "S1. System fault code 10"
+      },
+      "reg_080b": {
+        "name": "S1. System fault code 11"
+      },
+      "reg_080c": {
+        "name": "S1. System fault code 12"
+      },
+      "reg_080d": {
+        "name": "S1. System fault code 13"
+      },
+      "reg_080e": {
+        "name": "S1. System fault code 14"
+      },
+      "reg_080f": {
+        "name": "S1. System fault code 15"
+      },
+      "reg_0810": {
+        "name": "S1. System fault code 16"
+      },
+      "reg_0811": {
+        "name": "S1. System fault code 17"
+      },
+      "reg_0812": {
+        "name": "S1. System fault code 18"
+      },
+      "reg_0813": {
+        "name": "S1. System fault code 19"
+      },
+      "reg_0814": {
+        "name": "S1. System fault code 20"
+      },
+      "reg_0820": {
+        "name": "D4. Online battery count"
+      },
+      "reg_0821": {
+        "name": "D4. Battery 1 SOC"
+      },
+      "reg_0822": {
+        "name": "D4. Battery 2 SOC"
+      },
+      "reg_0823": {
+        "name": "D4. Battery 3 SOC"
+      },
+      "reg_0824": {
+        "name": "D4. Battery 4 SOC"
+      },
+      "reg_0825": {
+        "name": "D4. Battery 5 SOC"
+      },
+      "reg_0826": {
+        "name": "D4. Battery 6 SOC"
+      },
+      "reg_0827": {
+        "name": "D4. Battery 7 SOC"
+      },
+      "reg_0828": {
+        "name": "D4. Battery 8 SOC"
+      },
+      "reg_0829": {
+        "name": "D4. Battery 9 SOC"
+      },
+      "reg_082a": {
+        "name": "D4. Battery 10 SOC"
+      },
+      "reg_082b": {
+        "name": "D4. Battery 11 SOC"
+      },
+      "reg_082c": {
+        "name": "D4. Battery 12 SOC"
+      },
+      "reg_0840": {
+        "name": "S4. Meter total energy (today)"
+      },
+      "reg_0850": {
+        "name": "S4. Inverter total energy (today)"
+      },
+      "reg_0860": {
+        "name": "S4. Battery total energy (today)"
+      },
+      "reg_0870": {
+        "name": "S4. Grid import energy (total)"
+      },
+      "reg_0872": {
+        "name": "S4. Grid import (today)"
+      },
+      "reg_0880": {
+        "name": "S4. Grid export energy (total)"
+      },
+      "reg_0882": {
+        "name": "S4. Grid export (today)"
+      },
+      "reg_0890": {
+        "name": "S4. Inverter charge energy (total)"
+      },
+      "reg_0892": {
+        "name": "S4. Inverter charge (today)"
+      },
+      "reg_08a0": {
+        "name": "S4. Inverter discharge energy (total)"
+      },
+      "reg_08a2": {
+        "name": "S4. Inverter discharge (today)"
+      },
+      "reg_08b0": {
+        "name": "S4. Battery charge energy (total)"
+      },
+      "reg_08b2": {
+        "name": "S4. Battery charge (today)"
+      },
+      "reg_08c0": {
+        "name": "S4. Battery discharge energy (total)"
+      },
+      "reg_08c2": {
+        "name": "S4. Battery discharge (today)"
+      },
+      "reg_08d0": {
+        "name": "S4. Solar energy (total)"
+      },
+      "reg_08d2": {
+        "name": "S4. Solar energy (today)"
+      },
+      "reg_1000": {
+        "name": "S1. System device count"
+      },
+      "reg_1001": {
+        "name": "D1. System master flag"
+      },
+      "reg_1002": {
+        "name": "S1. System online device count"
+      },
+      "reg_1200": {
+        "name": "S4. Home consumption (total)"
+      },
+      "reg_1202": {
+        "name": "S4. Home consumption (today)"
+      },
+      "reg_1300": {
+        "name": "S3. Phase A active power"
+      },
+      "reg_1302": {
+        "name": "S3. Phase B active power"
+      },
+      "reg_1304": {
+        "name": "S3. Phase C active power"
+      },
+      "reg_1400": {
+        "name": "S3. Battery charge capability"
+      },
+      "reg_1401": {
+        "name": "S3. Battery discharge capability"
+      },
+      "reg_2010": {
+        "name": "D1. Device error count"
+      },
+      "reg_2011": {
+        "name": "D1. Device error code 1"
+      },
+      "reg_2012": {
+        "name": "D1. Device error code 2"
+      },
+      "reg_2013": {
+        "name": "D1. Device error code 3"
+      },
+      "reg_2014": {
+        "name": "D1. Device error code 4"
+      },
+      "reg_2015": {
+        "name": "D1. Device error code 5"
+      },
+      "reg_2016": {
+        "name": "D1. Device error code 6"
+      },
+      "reg_2017": {
+        "name": "D1. Device error code 7"
+      },
+      "reg_2018": {
+        "name": "D1. Device error code 8"
+      },
+      "reg_2019": {
+        "name": "D1. Device error code 9"
+      },
+      "reg_201a": {
+        "name": "D1. Device error code 10"
+      },
+      "reg_2100": {
+        "name": "D2. PV4 voltage"
+      },
+      "reg_2102": {
+        "name": "D2. PV4 current"
+      },
+      "reg_2104": {
+        "name": "D2. PV1 power"
+      },
+      "reg_2106": {
+        "name": "D2. PV2 power"
+      },
+      "reg_2108": {
+        "name": "D2. PV3 power"
+      },
+      "reg_210a": {
+        "name": "D2. PV4 power"
+      },
+      "reg_2202": {
+        "name": "D3. Min cell temperature"
+      },
+      "reg_2204": {
+        "name": "D3. Max cell temperature"
+      },
+      "reg_2206": {
+        "name": "D3. Max cell voltage"
+      },
+      "reg_2207": {
+        "name": "D3. Min cell voltage"
+      },
+      "reg_2300": {
+        "name": "D4. Battery 1 SOH"
+      },
+      "reg_2301": {
+        "name": "D4. Battery 2 SOH"
+      },
+      "reg_2302": {
+        "name": "D4. Battery 3 SOH"
+      },
+      "reg_2303": {
+        "name": "D4. Battery 4 SOH"
+      },
+      "reg_2304": {
+        "name": "D4. Battery 5 SOH"
+      },
+      "reg_2305": {
+        "name": "D4. Battery 6 SOH"
+      },
+      "reg_2306": {
+        "name": "D4. Battery 7 SOH"
+      },
+      "reg_2307": {
+        "name": "D4. Battery 8 SOH"
+      },
+      "reg_2308": {
+        "name": "D4. Battery 9 SOH"
+      },
+      "reg_2309": {
+        "name": "D4. Battery 10 SOH"
+      },
+      "reg_230a": {
+        "name": "D4. Battery 11 SOH"
+      },
+      "reg_230b": {
+        "name": "D4. Battery 12 SOH"
+      },
+      "reg_2310": {
+        "name": "D4. Battery 1 SN"
+      },
+      "reg_2318": {
+        "name": "D4. Battery 2 SN"
+      },
+      "reg_2320": {
+        "name": "D4. Battery 3 SN"
+      },
+      "reg_2328": {
+        "name": "D4. Battery 4 SN"
+      },
+      "reg_2330": {
+        "name": "D4. Battery 5 SN"
+      },
+      "reg_2338": {
+        "name": "D4. Battery 6 SN"
+      },
+      "reg_2340": {
+        "name": "D4. Battery 7 SN"
+      },
+      "reg_2348": {
+        "name": "D4. Battery 8 SN"
+      },
+      "reg_2350": {
+        "name": "D4. Battery 9 SN"
+      },
+      "reg_2358": {
+        "name": "D4. Battery 10 SN"
+      },
+      "reg_2360": {
+        "name": "D4. Battery 11 SN"
+      },
+      "reg_2368": {
+        "name": "D4. Battery 12 SN"
+      },
+      "reg_2400": {
+        "name": "D5. Grid/off-grid status",
+        "state": {
+          "0": "Off grid",
+          "1": "On grid"
+        }
+      },
+      "reg_2401": {
+        "name": "D5. Bypass AC1 power"
+      },
+      "reg_2404": {
+        "name": "D5. Bypass AC2 power"
+      },
+      "reg_2407": {
+        "name": "D5. Bypass AC3 power"
+      }
+    },
+    "number": {
+      "reg_000d": {
+        "name": "D1. Device communication address"
+      },
+      "reg_0215": {
+        "name": "S3. System control command"
+      },
+      "reg_0217": {
+        "name": "S3. Backup reserve ratio"
+      },
+      "reg_0219": {
+        "name": "S3. Max grid feed-in power"
+      },
+      "reg_021b": {
+        "name": "S3. Breaker capacity"
+      },
+      "reg_021c": {
+        "name": "D6. LED brightness"
+      },
+      "reg_021d": {
+        "name": "S3. System power setpoint"
+      },
+      "reg_021f": {
+        "name": "S3. Inverter power setpoint"
+      },
+      "reg_023a": {
+        "name": "S3. Battery charge/discharge setpoint"
+      },
+      "reg_023c": {
+        "name": "S3. Feed-in limit percentage"
+      },
+      "reg_0274": {
+        "name": "D5. Inverter active output percentage"
+      },
+      "reg_1003": {
+        "name": "D1. Host election priority"
+      },
+      "reg_1600": {
+        "name": "S3. Battery charge power limit"
+      },
+      "reg_1602": {
+        "name": "S3. Battery discharge power limit"
+      },
+      "reg_1604": {
+        "name": "S3. Grid import power limit"
+      },
+      "reg_1606": {
+        "name": "S3. Grid export power limit"
+      },
+      "reg_1608": {
+        "name": "S3. Inverter output power limit"
+      },
+      "reg_160a": {
+        "name": "S3. Inverter input power limit"
+      },
+      "reg_160c": {
+        "name": "S3. Grid port output power limit"
+      },
+      "reg_160e": {
+        "name": "S3. Grid port input power limit"
+      },
+      "reg_1611": {
+        "name": "S3. Battery target power"
+      },
+      "reg_1612": {
+        "name": "S3. Meter target power"
+      },
+      "reg_1613": {
+        "name": "S3. Inverter target power"
+      },
+      "reg_1614": {
+        "name": "S3. Grid port target power"
+      },
+      "reg_2200": {
+        "name": "S3. SOC lower limit"
+      },
+      "reg_2201": {
+        "name": "S3. SOC upper limit"
+      }
+    },
+    "select": {
+      "reg_0218": {
+        "name": "S3. Grid feed-in mode",
+        "state": {
+          "0": "Limited mode",
+          "1": "Unlimited mode",
+          "2": "Percentage limit"
+        }
+      },
+      "reg_022d": {
+        "name": "S3. System operation mode",
+        "state": {
+          "1": "Self-use",
+          "2": "AI mode"
+        }
+      },
+      "reg_0263": {
+        "name": "S3. Battery control mode",
+        "state": {
+          "0": "Remote",
+          "1": "Local"
+        }
+      },
+      "reg_0275": {
+        "name": "S3. VPP control mode (AU)",
+        "state": {
+          "0": "Self-use",
+          "1": "System power",
+          "2": "Inverter power",
+          "3": "Battery power"
+        }
+      },
+      "reg_0277": {
+        "name": "S3. Battery power switch (AU)",
+        "state": {
+          "0": "Allow charge & discharge",
+          "1": "Charge disabled",
+          "2": "Discharge disabled",
+          "3": "Both disabled"
+        }
+      },
+      "reg_1610": {
+        "name": "S3. Control point",
+        "state": {
+          "0": "None",
+          "1": "Battery point",
+          "2": "Meter point",
+          "3": "Inverter point",
+          "4": "Grid point"
+        }
+      }
+    },
+    "switch": {
+      "reg_0276": {
+        "name": "S3. Soft start switch (AU)"
+      },
+      "reg_0278": {
+        "name": "S3. Force off-grid (AU)"
+      },
+      "reg_2403": {
+        "name": "D6. Bypass AC1 switch"
+      },
+      "reg_2406": {
+        "name": "D6. Bypass AC2 switch"
+      },
+      "reg_2409": {
+        "name": "D6. Bypass AC3 switch"
+      }
+    }
+  }
+}

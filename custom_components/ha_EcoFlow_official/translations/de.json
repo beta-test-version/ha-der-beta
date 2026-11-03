@@ -1,0 +1,695 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "ha EcoFlow official verbinden",
+        "description": "Geben Sie die Adresse des EcoFlow-Wechselrichters oder Modbus-Simulators ein",
+        "data": {
+          "host": "IP-Adresse",
+          "port": "Port",
+          "unit_id": "Unit-ID",
+          "scan_interval": "Abfrageintervall (Sekunden)"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "ha EcoFlow official-Gerät gefunden",
+        "description": "{name}. Hinzufügen?"
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung nicht möglich. Prüfen Sie IP/Port und ob das Gerät läuft"
+    },
+    "abort": {
+      "already_configured": "Dieses Gerät ist bereits konfiguriert"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reg_0000": {
+        "name": "D1. Protokollversion"
+      },
+      "reg_0001": {
+        "name": "D1. System-Phasentyp",
+        "state": {
+          "1": "Dreiphasiges System",
+          "2": "Einphasiges System"
+        }
+      },
+      "reg_0002": {
+        "name": "D1. Produktnummer"
+      },
+      "reg_0003": {
+        "name": "D1. Geräte-Seriennummer (SN)"
+      },
+      "reg_000b": {
+        "name": "D1. Firmware-Version"
+      },
+      "reg_000e": {
+        "name": "D1. Hersteller"
+      },
+      "reg_0016": {
+        "name": "S3. Wechselrichter Gesamtwirkleistung"
+      },
+      "reg_0017": {
+        "name": "S2. Wechselrichter Gesamtblindleistung"
+      },
+      "reg_0200": {
+        "name": "D5. Netzcode"
+      },
+      "reg_0201": {
+        "name": "D1. UTC-Zeit"
+      },
+      "reg_0205": {
+        "name": "D1. Zeitzone"
+      },
+      "reg_0206": {
+        "name": "S2. Systemverbrauchsleistung"
+      },
+      "reg_0208": {
+        "name": "S2. System-Netzleistung"
+      },
+      "reg_020a": {
+        "name": "S2. System-PV-Leistung"
+      },
+      "reg_020c": {
+        "name": "S2. System-Batterieleistung"
+      },
+      "reg_020e": {
+        "name": "S2. System-SOC"
+      },
+      "reg_020f": {
+        "name": "S3. System-Nennleistung"
+      },
+      "reg_0211": {
+        "name": "D1. Systemstatus 1"
+      },
+      "reg_0213": {
+        "name": "D1. Systemstatus 2"
+      },
+      "reg_0221": {
+        "name": "S3. Max. Wirkleistungsabgabe"
+      },
+      "reg_0223": {
+        "name": "S3. Max. Wirkleistungsaufnahme"
+      },
+      "reg_0225": {
+        "name": "S3. Wechselrichter-Ausgangsleistung"
+      },
+      "reg_0227": {
+        "name": "S3. Batterie-Vollkapazität"
+      },
+      "reg_0229": {
+        "name": "S3. Batterie-Entladekapazität"
+      },
+      "reg_022b": {
+        "name": "S3. Batterie-Ladekapazität"
+      },
+      "reg_022e": {
+        "name": "S3. Netz Phase A Strom"
+      },
+      "reg_0230": {
+        "name": "S3. Netz Phase B Strom"
+      },
+      "reg_0232": {
+        "name": "S3. Netz Phase C Strom"
+      },
+      "reg_0234": {
+        "name": "S3. Phase A Spannung"
+      },
+      "reg_0236": {
+        "name": "S3. Phase B Spannung"
+      },
+      "reg_0238": {
+        "name": "S3. Phase C Spannung"
+      },
+      "reg_023d": {
+        "name": "D3. Batteriespannung"
+      },
+      "reg_023f": {
+        "name": "D3. Batteriestrom"
+      },
+      "reg_0241": {
+        "name": "D3. Batterietemperatur"
+      },
+      "reg_0243": {
+        "name": "D5. Wechselrichter Phase A Spannung"
+      },
+      "reg_0245": {
+        "name": "D5. Wechselrichter Phase B Spannung"
+      },
+      "reg_0247": {
+        "name": "D5. Wechselrichter Phase C Spannung"
+      },
+      "reg_0249": {
+        "name": "D5. Wechselrichter Phase A Strom"
+      },
+      "reg_024b": {
+        "name": "D5. Wechselrichter Phase B Strom"
+      },
+      "reg_024d": {
+        "name": "D5. Wechselrichter Phase C Strom"
+      },
+      "reg_024f": {
+        "name": "D5. Wechselrichter-Temperatur"
+      },
+      "reg_0251": {
+        "name": "D5. Wechselrichter-Frequenz"
+      },
+      "reg_0253": {
+        "name": "D2. PV1 Spannung"
+      },
+      "reg_0255": {
+        "name": "D2. PV2 Spannung"
+      },
+      "reg_0257": {
+        "name": "D2. PV3 Spannung"
+      },
+      "reg_0259": {
+        "name": "D2. PV1 Strom"
+      },
+      "reg_025b": {
+        "name": "D2. PV2 Strom"
+      },
+      "reg_025d": {
+        "name": "D2. PV3 Strom"
+      },
+      "reg_0260": {
+        "name": "S3. Effektive max. Einspeiseleistung"
+      },
+      "reg_0262": {
+        "name": "D3. Batteriezustand"
+      },
+      "reg_0264": {
+        "name": "S2. Blindleistung (System)"
+      },
+      "reg_0266": {
+        "name": "S3. Nenn-Maximalwirkleistung"
+      },
+      "reg_0267": {
+        "name": "S3. Max. Scheinleistung"
+      },
+      "reg_0268": {
+        "name": "S3. Max. Blindleistungsabgabe"
+      },
+      "reg_0269": {
+        "name": "S3. Max. Blindleistungsaufnahme"
+      },
+      "reg_0270": {
+        "name": "S3. PF-Grenze (Blindleistungsabgabe)"
+      },
+      "reg_0271": {
+        "name": "S3. PF-Grenze (Blindleistungsaufnahme)"
+      },
+      "reg_0272": {
+        "name": "D3. Max. Ladefähigkeit"
+      },
+      "reg_0273": {
+        "name": "D3. Max. Entladefähigkeit"
+      },
+      "reg_0800": {
+        "name": "S1. Aktuelle Systemfehleranzahl"
+      },
+      "reg_0801": {
+        "name": "S1. Systemfehlercode 1"
+      },
+      "reg_0802": {
+        "name": "S1. Systemfehlercode 2"
+      },
+      "reg_0803": {
+        "name": "S1. Systemfehlercode 3"
+      },
+      "reg_0804": {
+        "name": "S1. Systemfehlercode 4"
+      },
+      "reg_0805": {
+        "name": "S1. Systemfehlercode 5"
+      },
+      "reg_0806": {
+        "name": "S1. Systemfehlercode 6"
+      },
+      "reg_0807": {
+        "name": "S1. Systemfehlercode 7"
+      },
+      "reg_0808": {
+        "name": "S1. Systemfehlercode 8"
+      },
+      "reg_0809": {
+        "name": "S1. Systemfehlercode 9"
+      },
+      "reg_080a": {
+        "name": "S1. Systemfehlercode 10"
+      },
+      "reg_080b": {
+        "name": "S1. Systemfehlercode 11"
+      },
+      "reg_080c": {
+        "name": "S1. Systemfehlercode 12"
+      },
+      "reg_080d": {
+        "name": "S1. Systemfehlercode 13"
+      },
+      "reg_080e": {
+        "name": "S1. Systemfehlercode 14"
+      },
+      "reg_080f": {
+        "name": "S1. Systemfehlercode 15"
+      },
+      "reg_0810": {
+        "name": "S1. Systemfehlercode 16"
+      },
+      "reg_0811": {
+        "name": "S1. Systemfehlercode 17"
+      },
+      "reg_0812": {
+        "name": "S1. Systemfehlercode 18"
+      },
+      "reg_0813": {
+        "name": "S1. Systemfehlercode 19"
+      },
+      "reg_0814": {
+        "name": "S1. Systemfehlercode 20"
+      },
+      "reg_0820": {
+        "name": "D4. Anzahl Online-Batterien"
+      },
+      "reg_0821": {
+        "name": "D4. Batterie 1 SOC"
+      },
+      "reg_0822": {
+        "name": "D4. Batterie 2 SOC"
+      },
+      "reg_0823": {
+        "name": "D4. Batterie 3 SOC"
+      },
+      "reg_0824": {
+        "name": "D4. Batterie 4 SOC"
+      },
+      "reg_0825": {
+        "name": "D4. Batterie 5 SOC"
+      },
+      "reg_0826": {
+        "name": "D4. Batterie 6 SOC"
+      },
+      "reg_0827": {
+        "name": "D4. Batterie 7 SOC"
+      },
+      "reg_0828": {
+        "name": "D4. Batterie 8 SOC"
+      },
+      "reg_0829": {
+        "name": "D4. Batterie 9 SOC"
+      },
+      "reg_082a": {
+        "name": "D4. Batterie 10 SOC"
+      },
+      "reg_082b": {
+        "name": "D4. Batterie 11 SOC"
+      },
+      "reg_082c": {
+        "name": "D4. Batterie 12 SOC"
+      },
+      "reg_0840": {
+        "name": "S4. Zähler Gesamtenergie (heute)"
+      },
+      "reg_0850": {
+        "name": "S4. Wechselrichter Gesamtenergie (heute)"
+      },
+      "reg_0860": {
+        "name": "S4. Batterie Gesamtenergie (heute)"
+      },
+      "reg_0870": {
+        "name": "S4. Netzbezug Energie (gesamt)"
+      },
+      "reg_0872": {
+        "name": "S4. Netzbezug (heute)"
+      },
+      "reg_0880": {
+        "name": "S4. Netzeinspeisung Energie (gesamt)"
+      },
+      "reg_0882": {
+        "name": "S4. Netzeinspeisung (heute)"
+      },
+      "reg_0890": {
+        "name": "S4. Wechselrichter Ladeenergie (gesamt)"
+      },
+      "reg_0892": {
+        "name": "S4. Wechselrichter Ladung (heute)"
+      },
+      "reg_08a0": {
+        "name": "S4. Wechselrichter Entladeenergie (gesamt)"
+      },
+      "reg_08a2": {
+        "name": "S4. Wechselrichter Entladung (heute)"
+      },
+      "reg_08b0": {
+        "name": "S4. Batterie Ladeenergie (gesamt)"
+      },
+      "reg_08b2": {
+        "name": "S4. Batterie Ladung (heute)"
+      },
+      "reg_08c0": {
+        "name": "S4. Batterie Entladeenergie (gesamt)"
+      },
+      "reg_08c2": {
+        "name": "S4. Batterie Entladung (heute)"
+      },
+      "reg_08d0": {
+        "name": "S4. Solarenergie (gesamt)"
+      },
+      "reg_08d2": {
+        "name": "S4. Solarenergie (heute)"
+      },
+      "reg_1000": {
+        "name": "S1. System-Geräteanzahl"
+      },
+      "reg_1001": {
+        "name": "D1. System-Master-Kennzeichen"
+      },
+      "reg_1002": {
+        "name": "S1. Anzahl der Online-Geräte im System"
+      },
+      "reg_1200": {
+        "name": "S4. Hausverbrauch (gesamt)"
+      },
+      "reg_1202": {
+        "name": "S4. Hausverbrauch (heute)"
+      },
+      "reg_1300": {
+        "name": "S3. Phase A Wirkleistung"
+      },
+      "reg_1302": {
+        "name": "S3. Phase B Wirkleistung"
+      },
+      "reg_1304": {
+        "name": "S3. Phase C Wirkleistung"
+      },
+      "reg_1400": {
+        "name": "S3. Batterie-Ladefähigkeit"
+      },
+      "reg_1401": {
+        "name": "S3. Batterie-Entladefähigkeit"
+      },
+      "reg_2010": {
+        "name": "D1. Gerätefehleranzahl"
+      },
+      "reg_2011": {
+        "name": "D1. Gerätefehlercode 1"
+      },
+      "reg_2012": {
+        "name": "D1. Gerätefehlercode 2"
+      },
+      "reg_2013": {
+        "name": "D1. Gerätefehlercode 3"
+      },
+      "reg_2014": {
+        "name": "D1. Gerätefehlercode 4"
+      },
+      "reg_2015": {
+        "name": "D1. Gerätefehlercode 5"
+      },
+      "reg_2016": {
+        "name": "D1. Gerätefehlercode 6"
+      },
+      "reg_2017": {
+        "name": "D1. Gerätefehlercode 7"
+      },
+      "reg_2018": {
+        "name": "D1. Gerätefehlercode 8"
+      },
+      "reg_2019": {
+        "name": "D1. Gerätefehlercode 9"
+      },
+      "reg_201a": {
+        "name": "D1. Gerätefehlercode 10"
+      },
+      "reg_2100": {
+        "name": "D2. PV4 Spannung"
+      },
+      "reg_2102": {
+        "name": "D2. PV4 Strom"
+      },
+      "reg_2104": {
+        "name": "D2. PV1 Leistung"
+      },
+      "reg_2106": {
+        "name": "D2. PV2 Leistung"
+      },
+      "reg_2108": {
+        "name": "D2. PV3 Leistung"
+      },
+      "reg_210a": {
+        "name": "D2. PV4 Leistung"
+      },
+      "reg_2202": {
+        "name": "D3. Minimale Zelltemperatur"
+      },
+      "reg_2204": {
+        "name": "D3. Maximale Zelltemperatur"
+      },
+      "reg_2206": {
+        "name": "D3. Max. Zellenspannung"
+      },
+      "reg_2207": {
+        "name": "D3. Min. Zellenspannung"
+      },
+      "reg_2300": {
+        "name": "D4. Batterie 1 SOH"
+      },
+      "reg_2301": {
+        "name": "D4. Batterie 2 SOH"
+      },
+      "reg_2302": {
+        "name": "D4. Batterie 3 SOH"
+      },
+      "reg_2303": {
+        "name": "D4. Batterie 4 SOH"
+      },
+      "reg_2304": {
+        "name": "D4. Batterie 5 SOH"
+      },
+      "reg_2305": {
+        "name": "D4. Batterie 6 SOH"
+      },
+      "reg_2306": {
+        "name": "D4. Batterie 7 SOH"
+      },
+      "reg_2307": {
+        "name": "D4. Batterie 8 SOH"
+      },
+      "reg_2308": {
+        "name": "D4. Batterie 9 SOH"
+      },
+      "reg_2309": {
+        "name": "D4. Batterie 10 SOH"
+      },
+      "reg_230a": {
+        "name": "D4. Batterie 11 SOH"
+      },
+      "reg_230b": {
+        "name": "D4. Batterie 12 SOH"
+      },
+      "reg_2310": {
+        "name": "D4. Batterie 1 SN"
+      },
+      "reg_2318": {
+        "name": "D4. Batterie 2 SN"
+      },
+      "reg_2320": {
+        "name": "D4. Batterie 3 SN"
+      },
+      "reg_2328": {
+        "name": "D4. Batterie 4 SN"
+      },
+      "reg_2330": {
+        "name": "D4. Batterie 5 SN"
+      },
+      "reg_2338": {
+        "name": "D4. Batterie 6 SN"
+      },
+      "reg_2340": {
+        "name": "D4. Batterie 7 SN"
+      },
+      "reg_2348": {
+        "name": "D4. Batterie 8 SN"
+      },
+      "reg_2350": {
+        "name": "D4. Batterie 9 SN"
+      },
+      "reg_2358": {
+        "name": "D4. Batterie 10 SN"
+      },
+      "reg_2360": {
+        "name": "D4. Batterie 11 SN"
+      },
+      "reg_2368": {
+        "name": "D4. Batterie 12 SN"
+      },
+      "reg_2400": {
+        "name": "D5. Netz-/Inselbetrieb-Status",
+        "state": {
+          "0": "Inselbetrieb",
+          "1": "Netzbetrieb"
+        }
+      },
+      "reg_2401": {
+        "name": "D5. Bypass AC1 Leistung"
+      },
+      "reg_2404": {
+        "name": "D5. Bypass AC2 Leistung"
+      },
+      "reg_2407": {
+        "name": "D5. Bypass AC3 Leistung"
+      }
+    },
+    "number": {
+      "reg_000d": {
+        "name": "D1. Geräte-Kommunikationsadresse"
+      },
+      "reg_0215": {
+        "name": "S3. System-Steuerbefehl"
+      },
+      "reg_0217": {
+        "name": "S3. Backup-Reserveanteil"
+      },
+      "reg_0219": {
+        "name": "S3. Max. Netz-Einspeiseleistung"
+      },
+      "reg_021b": {
+        "name": "S3. Sicherungskapazität"
+      },
+      "reg_021c": {
+        "name": "D6. LED-Helligkeit"
+      },
+      "reg_021d": {
+        "name": "S3. System-Leistungssollwert"
+      },
+      "reg_021f": {
+        "name": "S3. Wechselrichter-Leistungssollwert"
+      },
+      "reg_023a": {
+        "name": "S3. Batterie Lade-/Entladesollwert"
+      },
+      "reg_023c": {
+        "name": "S3. Einspeisebegrenzung Prozent"
+      },
+      "reg_0274": {
+        "name": "D5. Wechselrichter Wirkleistungsabgabe Prozent"
+      },
+      "reg_1003": {
+        "name": "D1. Host-Wahlpriorität"
+      },
+      "reg_1600": {
+        "name": "S3. Batterie Ladeleistungsgrenze"
+      },
+      "reg_1602": {
+        "name": "S3. Batterie Entladeleistungsgrenze"
+      },
+      "reg_1604": {
+        "name": "S3. Netzbezug Leistungsgrenze"
+      },
+      "reg_1606": {
+        "name": "S3. Netzeinspeisung Leistungsgrenze"
+      },
+      "reg_1608": {
+        "name": "S3. Wechselrichter Ausgangsleistungsgrenze"
+      },
+      "reg_160a": {
+        "name": "S3. Wechselrichter Eingangsleistungsgrenze"
+      },
+      "reg_160c": {
+        "name": "S3. Netzanschluss Ausgangsleistungsgrenze"
+      },
+      "reg_160e": {
+        "name": "S3. Netzanschluss Eingangsleistungsgrenze"
+      },
+      "reg_1611": {
+        "name": "S3. Batterie Zielleistung"
+      },
+      "reg_1612": {
+        "name": "S3. Zähler Zielleistung"
+      },
+      "reg_1613": {
+        "name": "S3. Wechselrichter Zielleistung"
+      },
+      "reg_1614": {
+        "name": "S3. Netzanschluss Zielleistung"
+      },
+      "reg_2200": {
+        "name": "S3. SOC Untergrenze"
+      },
+      "reg_2201": {
+        "name": "S3. SOC Obergrenze"
+      }
+    },
+    "select": {
+      "reg_0218": {
+        "name": "S3. Netz-Einspeisemodus",
+        "state": {
+          "0": "Begrenzter Modus",
+          "1": "Unbegrenzter Modus",
+          "2": "Prozentuale Begrenzung"
+        }
+      },
+      "reg_022d": {
+        "name": "S3. System-Betriebsmodus",
+        "state": {
+          "1": "Eigenverbrauch",
+          "2": "AI-Modus"
+        }
+      },
+      "reg_0263": {
+        "name": "S3. Batterie-Steuerungsmodus",
+        "state": {
+          "0": "Fernsteuerung",
+          "1": "Lokal"
+        }
+      },
+      "reg_0275": {
+        "name": "S3. VPP-Steuerungsmodus (AU)",
+        "state": {
+          "0": "Eigenverbrauch",
+          "1": "Systemleistung",
+          "2": "Wechselrichterleistung",
+          "3": "Batterieleistung"
+        }
+      },
+      "reg_0277": {
+        "name": "S3. Batterie-Leistungsschalter (AU)",
+        "state": {
+          "0": "Laden und Entladen erlaubt",
+          "1": "Laden deaktiviert",
+          "2": "Entladen deaktiviert",
+          "3": "Beides deaktiviert"
+        }
+      },
+      "reg_1610": {
+        "name": "S3. Steuerpunkt",
+        "state": {
+          "0": "Keiner",
+          "1": "Batteriepunkt",
+          "2": "Zählerpunkt",
+          "3": "Wechselrichterpunkt",
+          "4": "Netzpunkt"
+        }
+      }
+    },
+    "switch": {
+      "reg_0276": {
+        "name": "S3. Sanftanlauf-Schalter (AU)"
+      },
+      "reg_0278": {
+        "name": "S3. Inselbetrieb erzwingen (AU)"
+      },
+      "reg_2403": {
+        "name": "D6. Bypass AC1 Schalter"
+      },
+      "reg_2406": {
+        "name": "D6. Bypass AC2 Schalter"
+      },
+      "reg_2409": {
+        "name": "D6. Bypass AC3 Schalter"
+      }
+    }
+  }
+}

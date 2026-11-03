@@ -1,0 +1,695 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Podłącz ha EcoFlow official",
+        "description": "Podaj adres falownika EcoFlow lub symulatora Modbus",
+        "data": {
+          "host": "Adres IP",
+          "port": "Port",
+          "unit_id": "ID urządzenia",
+          "scan_interval": "Interwał odczytu (sekundy)"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "Wykryto urządzenie ha EcoFlow official",
+        "description": "Znaleziono {name}. Dodać?"
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć. Sprawdź adres IP/port i czy urządzenie jest włączone"
+    },
+    "abort": {
+      "already_configured": "To urządzenie jest już skonfigurowane"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reg_0000": {
+        "name": "D1. Wersja protokołu"
+      },
+      "reg_0001": {
+        "name": "D1. Typ fazowy systemu",
+        "state": {
+          "1": "System trójfazowy",
+          "2": "System jednofazowy"
+        }
+      },
+      "reg_0002": {
+        "name": "D1. Numer produktu"
+      },
+      "reg_0003": {
+        "name": "D1. Numer seryjny urządzenia (SN)"
+      },
+      "reg_000b": {
+        "name": "D1. Wersja oprogramowania"
+      },
+      "reg_000e": {
+        "name": "D1. Producent"
+      },
+      "reg_0016": {
+        "name": "S3. Całkowita moc czynna falownika"
+      },
+      "reg_0017": {
+        "name": "S2. Całkowita moc bierna falownika"
+      },
+      "reg_0200": {
+        "name": "D5. Kod sieci"
+      },
+      "reg_0201": {
+        "name": "D1. Czas UTC"
+      },
+      "reg_0205": {
+        "name": "D1. Strefa czasowa"
+      },
+      "reg_0206": {
+        "name": "S2. Moc zużywana przez system"
+      },
+      "reg_0208": {
+        "name": "S2. Moc sieci systemu"
+      },
+      "reg_020a": {
+        "name": "S2. Moc fotowoltaiczna systemu"
+      },
+      "reg_020c": {
+        "name": "S2. Moc baterii systemu"
+      },
+      "reg_020e": {
+        "name": "S2. SOC systemu"
+      },
+      "reg_020f": {
+        "name": "S3. Moc znamionowa systemu"
+      },
+      "reg_0211": {
+        "name": "D1. Status systemu 1"
+      },
+      "reg_0213": {
+        "name": "D1. Status systemu 2"
+      },
+      "reg_0221": {
+        "name": "S3. Maks. moc czynna wyjściowa"
+      },
+      "reg_0223": {
+        "name": "S3. Maks. moc czynna wejściowa"
+      },
+      "reg_0225": {
+        "name": "S3. Moc wyjściowa falownika"
+      },
+      "reg_0227": {
+        "name": "S3. Pełna pojemność baterii"
+      },
+      "reg_0229": {
+        "name": "S3. Pojemność rozładowania baterii"
+      },
+      "reg_022b": {
+        "name": "S3. Pojemność ładowania baterii"
+      },
+      "reg_022e": {
+        "name": "S3. Prąd fazy A sieci"
+      },
+      "reg_0230": {
+        "name": "S3. Prąd fazy B sieci"
+      },
+      "reg_0232": {
+        "name": "S3. Prąd fazy C sieci"
+      },
+      "reg_0234": {
+        "name": "S3. Napięcie fazy A"
+      },
+      "reg_0236": {
+        "name": "S3. Napięcie fazy B"
+      },
+      "reg_0238": {
+        "name": "S3. Napięcie fazy C"
+      },
+      "reg_023d": {
+        "name": "D3. Napięcie baterii"
+      },
+      "reg_023f": {
+        "name": "D3. Prąd baterii"
+      },
+      "reg_0241": {
+        "name": "D3. Temperatura baterii"
+      },
+      "reg_0243": {
+        "name": "D5. Napięcie fazy A falownika"
+      },
+      "reg_0245": {
+        "name": "D5. Napięcie fazy B falownika"
+      },
+      "reg_0247": {
+        "name": "D5. Napięcie fazy C falownika"
+      },
+      "reg_0249": {
+        "name": "D5. Prąd fazy A falownika"
+      },
+      "reg_024b": {
+        "name": "D5. Prąd fazy B falownika"
+      },
+      "reg_024d": {
+        "name": "D5. Prąd fazy C falownika"
+      },
+      "reg_024f": {
+        "name": "D5. Temperatura falownika"
+      },
+      "reg_0251": {
+        "name": "D5. Częstotliwość falownika"
+      },
+      "reg_0253": {
+        "name": "D2. Napięcie PV1"
+      },
+      "reg_0255": {
+        "name": "D2. Napięcie PV2"
+      },
+      "reg_0257": {
+        "name": "D2. Napięcie PV3"
+      },
+      "reg_0259": {
+        "name": "D2. Prąd PV1"
+      },
+      "reg_025b": {
+        "name": "D2. Prąd PV2"
+      },
+      "reg_025d": {
+        "name": "D2. Prąd PV3"
+      },
+      "reg_0260": {
+        "name": "S3. Efektywna maks. moc oddawania do sieci"
+      },
+      "reg_0262": {
+        "name": "D3. Stan baterii"
+      },
+      "reg_0264": {
+        "name": "S2. Moc bierna (system)"
+      },
+      "reg_0266": {
+        "name": "S3. Znamionowa maks. moc czynna"
+      },
+      "reg_0267": {
+        "name": "S3. Maks. moc pozorna"
+      },
+      "reg_0268": {
+        "name": "S3. Maks. moc bierna wyjściowa"
+      },
+      "reg_0269": {
+        "name": "S3. Maks. moc bierna wejściowa"
+      },
+      "reg_0270": {
+        "name": "S3. Limit PF (oddawanie mocy biernej)"
+      },
+      "reg_0271": {
+        "name": "S3. Limit PF (pobieranie mocy biernej)"
+      },
+      "reg_0272": {
+        "name": "D3. Maks. zdolność ładowania"
+      },
+      "reg_0273": {
+        "name": "D3. Maks. zdolność rozładowania"
+      },
+      "reg_0800": {
+        "name": "S1. Bieżąca liczba błędów systemu"
+      },
+      "reg_0801": {
+        "name": "S1. Kod błędu systemu 1"
+      },
+      "reg_0802": {
+        "name": "S1. Kod błędu systemu 2"
+      },
+      "reg_0803": {
+        "name": "S1. Kod błędu systemu 3"
+      },
+      "reg_0804": {
+        "name": "S1. Kod błędu systemu 4"
+      },
+      "reg_0805": {
+        "name": "S1. Kod błędu systemu 5"
+      },
+      "reg_0806": {
+        "name": "S1. Kod błędu systemu 6"
+      },
+      "reg_0807": {
+        "name": "S1. Kod błędu systemu 7"
+      },
+      "reg_0808": {
+        "name": "S1. Kod błędu systemu 8"
+      },
+      "reg_0809": {
+        "name": "S1. Kod błędu systemu 9"
+      },
+      "reg_080a": {
+        "name": "S1. Kod błędu systemu 10"
+      },
+      "reg_080b": {
+        "name": "S1. Kod błędu systemu 11"
+      },
+      "reg_080c": {
+        "name": "S1. Kod błędu systemu 12"
+      },
+      "reg_080d": {
+        "name": "S1. Kod błędu systemu 13"
+      },
+      "reg_080e": {
+        "name": "S1. Kod błędu systemu 14"
+      },
+      "reg_080f": {
+        "name": "S1. Kod błędu systemu 15"
+      },
+      "reg_0810": {
+        "name": "S1. Kod błędu systemu 16"
+      },
+      "reg_0811": {
+        "name": "S1. Kod błędu systemu 17"
+      },
+      "reg_0812": {
+        "name": "S1. Kod błędu systemu 18"
+      },
+      "reg_0813": {
+        "name": "S1. Kod błędu systemu 19"
+      },
+      "reg_0814": {
+        "name": "S1. Kod błędu systemu 20"
+      },
+      "reg_0820": {
+        "name": "D4. Liczba baterii online"
+      },
+      "reg_0821": {
+        "name": "D4. Bateria 1 SOC"
+      },
+      "reg_0822": {
+        "name": "D4. Bateria 2 SOC"
+      },
+      "reg_0823": {
+        "name": "D4. Bateria 3 SOC"
+      },
+      "reg_0824": {
+        "name": "D4. Bateria 4 SOC"
+      },
+      "reg_0825": {
+        "name": "D4. Bateria 5 SOC"
+      },
+      "reg_0826": {
+        "name": "D4. Bateria 6 SOC"
+      },
+      "reg_0827": {
+        "name": "D4. Bateria 7 SOC"
+      },
+      "reg_0828": {
+        "name": "D4. Bateria 8 SOC"
+      },
+      "reg_0829": {
+        "name": "D4. Bateria 9 SOC"
+      },
+      "reg_082a": {
+        "name": "D4. Bateria 10 SOC"
+      },
+      "reg_082b": {
+        "name": "D4. Bateria 11 SOC"
+      },
+      "reg_082c": {
+        "name": "D4. Bateria 12 SOC"
+      },
+      "reg_0840": {
+        "name": "S4. Całkowita energia licznika (dziś)"
+      },
+      "reg_0850": {
+        "name": "S4. Całkowita energia falownika (dziś)"
+      },
+      "reg_0860": {
+        "name": "S4. Całkowita energia baterii (dziś)"
+      },
+      "reg_0870": {
+        "name": "S4. Energia pobrana z sieci (łącznie)"
+      },
+      "reg_0872": {
+        "name": "S4. Pobór z sieci (dziś)"
+      },
+      "reg_0880": {
+        "name": "S4. Energia oddana do sieci (łącznie)"
+      },
+      "reg_0882": {
+        "name": "S4. Oddanie do sieci (dziś)"
+      },
+      "reg_0890": {
+        "name": "S4. Energia ładowania falownika (łącznie)"
+      },
+      "reg_0892": {
+        "name": "S4. Ładowanie falownika (dziś)"
+      },
+      "reg_08a0": {
+        "name": "S4. Energia rozładowania falownika (łącznie)"
+      },
+      "reg_08a2": {
+        "name": "S4. Rozładowanie falownika (dziś)"
+      },
+      "reg_08b0": {
+        "name": "S4. Energia ładowania baterii (łącznie)"
+      },
+      "reg_08b2": {
+        "name": "S4. Ładowanie baterii (dziś)"
+      },
+      "reg_08c0": {
+        "name": "S4. Energia rozładowania baterii (łącznie)"
+      },
+      "reg_08c2": {
+        "name": "S4. Rozładowanie baterii (dziś)"
+      },
+      "reg_08d0": {
+        "name": "S4. Energia słoneczna (łącznie)"
+      },
+      "reg_08d2": {
+        "name": "S4. Energia słoneczna (dziś)"
+      },
+      "reg_1000": {
+        "name": "S1. Liczba urządzeń w systemie"
+      },
+      "reg_1001": {
+        "name": "D1. Flaga master systemu"
+      },
+      "reg_1002": {
+        "name": "S1. Liczba urządzeń systemu online"
+      },
+      "reg_1200": {
+        "name": "S4. Zużycie domu (łącznie)"
+      },
+      "reg_1202": {
+        "name": "S4. Zużycie domu (dziś)"
+      },
+      "reg_1300": {
+        "name": "S3. Moc czynna fazy A"
+      },
+      "reg_1302": {
+        "name": "S3. Moc czynna fazy B"
+      },
+      "reg_1304": {
+        "name": "S3. Moc czynna fazy C"
+      },
+      "reg_1400": {
+        "name": "S3. Zdolność ładowania baterii"
+      },
+      "reg_1401": {
+        "name": "S3. Zdolność rozładowania baterii"
+      },
+      "reg_2010": {
+        "name": "D1. Liczba błędów urządzenia"
+      },
+      "reg_2011": {
+        "name": "D1. Kod błędu urządzenia 1"
+      },
+      "reg_2012": {
+        "name": "D1. Kod błędu urządzenia 2"
+      },
+      "reg_2013": {
+        "name": "D1. Kod błędu urządzenia 3"
+      },
+      "reg_2014": {
+        "name": "D1. Kod błędu urządzenia 4"
+      },
+      "reg_2015": {
+        "name": "D1. Kod błędu urządzenia 5"
+      },
+      "reg_2016": {
+        "name": "D1. Kod błędu urządzenia 6"
+      },
+      "reg_2017": {
+        "name": "D1. Kod błędu urządzenia 7"
+      },
+      "reg_2018": {
+        "name": "D1. Kod błędu urządzenia 8"
+      },
+      "reg_2019": {
+        "name": "D1. Kod błędu urządzenia 9"
+      },
+      "reg_201a": {
+        "name": "D1. Kod błędu urządzenia 10"
+      },
+      "reg_2100": {
+        "name": "D2. Napięcie PV4"
+      },
+      "reg_2102": {
+        "name": "D2. Prąd PV4"
+      },
+      "reg_2104": {
+        "name": "D2. Moc PV1"
+      },
+      "reg_2106": {
+        "name": "D2. Moc PV2"
+      },
+      "reg_2108": {
+        "name": "D2. Moc PV3"
+      },
+      "reg_210a": {
+        "name": "D2. Moc PV4"
+      },
+      "reg_2202": {
+        "name": "D3. Minimalna temperatura ogniw"
+      },
+      "reg_2204": {
+        "name": "D3. Maksymalna temperatura ogniw"
+      },
+      "reg_2206": {
+        "name": "D3. Maks. napięcie ogniwa"
+      },
+      "reg_2207": {
+        "name": "D3. Min. napięcie ogniwa"
+      },
+      "reg_2300": {
+        "name": "D4. Bateria 1 SOH"
+      },
+      "reg_2301": {
+        "name": "D4. Bateria 2 SOH"
+      },
+      "reg_2302": {
+        "name": "D4. Bateria 3 SOH"
+      },
+      "reg_2303": {
+        "name": "D4. Bateria 4 SOH"
+      },
+      "reg_2304": {
+        "name": "D4. Bateria 5 SOH"
+      },
+      "reg_2305": {
+        "name": "D4. Bateria 6 SOH"
+      },
+      "reg_2306": {
+        "name": "D4. Bateria 7 SOH"
+      },
+      "reg_2307": {
+        "name": "D4. Bateria 8 SOH"
+      },
+      "reg_2308": {
+        "name": "D4. Bateria 9 SOH"
+      },
+      "reg_2309": {
+        "name": "D4. Bateria 10 SOH"
+      },
+      "reg_230a": {
+        "name": "D4. Bateria 11 SOH"
+      },
+      "reg_230b": {
+        "name": "D4. Bateria 12 SOH"
+      },
+      "reg_2310": {
+        "name": "D4. Bateria 1 SN"
+      },
+      "reg_2318": {
+        "name": "D4. Bateria 2 SN"
+      },
+      "reg_2320": {
+        "name": "D4. Bateria 3 SN"
+      },
+      "reg_2328": {
+        "name": "D4. Bateria 4 SN"
+      },
+      "reg_2330": {
+        "name": "D4. Bateria 5 SN"
+      },
+      "reg_2338": {
+        "name": "D4. Bateria 6 SN"
+      },
+      "reg_2340": {
+        "name": "D4. Bateria 7 SN"
+      },
+      "reg_2348": {
+        "name": "D4. Bateria 8 SN"
+      },
+      "reg_2350": {
+        "name": "D4. Bateria 9 SN"
+      },
+      "reg_2358": {
+        "name": "D4. Bateria 10 SN"
+      },
+      "reg_2360": {
+        "name": "D4. Bateria 11 SN"
+      },
+      "reg_2368": {
+        "name": "D4. Bateria 12 SN"
+      },
+      "reg_2400": {
+        "name": "D5. Status sieć/tryb wyspowy",
+        "state": {
+          "0": "Praca wyspowa",
+          "1": "Praca z siecią"
+        }
+      },
+      "reg_2401": {
+        "name": "D5. Moc bypass AC1"
+      },
+      "reg_2404": {
+        "name": "D5. Moc bypass AC2"
+      },
+      "reg_2407": {
+        "name": "D5. Moc bypass AC3"
+      }
+    },
+    "number": {
+      "reg_000d": {
+        "name": "D1. Adres komunikacyjny urządzenia"
+      },
+      "reg_0215": {
+        "name": "S3. Komenda sterowania systemem"
+      },
+      "reg_0217": {
+        "name": "S3. Współczynnik rezerwy zapasowej"
+      },
+      "reg_0219": {
+        "name": "S3. Maks. moc oddawania do sieci"
+      },
+      "reg_021b": {
+        "name": "S3. Pojemność wyłącznika"
+      },
+      "reg_021c": {
+        "name": "D6. Jasność LED"
+      },
+      "reg_021d": {
+        "name": "S3. Wartość zadana mocy systemu"
+      },
+      "reg_021f": {
+        "name": "S3. Wartość zadana mocy falownika"
+      },
+      "reg_023a": {
+        "name": "S3. Wartość zadana ładowania/rozładowania baterii"
+      },
+      "reg_023c": {
+        "name": "S3. Procent limitu oddawania do sieci"
+      },
+      "reg_0274": {
+        "name": "D5. Procent mocy czynnej wyjściowej falownika"
+      },
+      "reg_1003": {
+        "name": "D1. Priorytet wyboru hosta"
+      },
+      "reg_1600": {
+        "name": "S3. Limit mocy ładowania baterii"
+      },
+      "reg_1602": {
+        "name": "S3. Limit mocy rozładowania baterii"
+      },
+      "reg_1604": {
+        "name": "S3. Limit mocy poboru z sieci"
+      },
+      "reg_1606": {
+        "name": "S3. Limit mocy oddawania do sieci"
+      },
+      "reg_1608": {
+        "name": "S3. Limit mocy wyjściowej falownika"
+      },
+      "reg_160a": {
+        "name": "S3. Limit mocy wejściowej falownika"
+      },
+      "reg_160c": {
+        "name": "S3. Limit mocy wyjściowej portu sieci"
+      },
+      "reg_160e": {
+        "name": "S3. Limit mocy wejściowej portu sieci"
+      },
+      "reg_1611": {
+        "name": "S3. Moc docelowa baterii"
+      },
+      "reg_1612": {
+        "name": "S3. Moc docelowa licznika"
+      },
+      "reg_1613": {
+        "name": "S3. Moc docelowa falownika"
+      },
+      "reg_1614": {
+        "name": "S3. Moc docelowa portu sieci"
+      },
+      "reg_2200": {
+        "name": "S3. Dolny limit SOC"
+      },
+      "reg_2201": {
+        "name": "S3. Górny limit SOC"
+      }
+    },
+    "select": {
+      "reg_0218": {
+        "name": "S3. Tryb oddawania do sieci",
+        "state": {
+          "0": "Tryb ograniczony",
+          "1": "Tryb nieograniczony",
+          "2": "Limit procentowy"
+        }
+      },
+      "reg_022d": {
+        "name": "S3. Tryb pracy systemu",
+        "state": {
+          "1": "Zużycie własne",
+          "2": "Tryb AI"
+        }
+      },
+      "reg_0263": {
+        "name": "S3. Tryb sterowania baterią",
+        "state": {
+          "0": "Zdalny",
+          "1": "Lokalny"
+        }
+      },
+      "reg_0275": {
+        "name": "S3. Tryb sterowania VPP (AU)",
+        "state": {
+          "0": "Zużycie własne",
+          "1": "Moc systemu",
+          "2": "Moc falownika",
+          "3": "Moc baterii"
+        }
+      },
+      "reg_0277": {
+        "name": "S3. Przełącznik mocy baterii (AU)",
+        "state": {
+          "0": "Ładowanie i rozładowanie dozwolone",
+          "1": "Ładowanie wyłączone",
+          "2": "Rozładowanie wyłączone",
+          "3": "Oba wyłączone"
+        }
+      },
+      "reg_1610": {
+        "name": "S3. Punkt sterowania",
+        "state": {
+          "0": "Brak",
+          "1": "Punkt baterii",
+          "2": "Punkt licznika",
+          "3": "Punkt falownika",
+          "4": "Punkt sieci"
+        }
+      }
+    },
+    "switch": {
+      "reg_0276": {
+        "name": "S3. Przełącznik łagodnego startu (AU)"
+      },
+      "reg_0278": {
+        "name": "S3. Wymuszony tryb wyspowy (AU)"
+      },
+      "reg_2403": {
+        "name": "D6. Przełącznik bypass AC1"
+      },
+      "reg_2406": {
+        "name": "D6. Przełącznik bypass AC2"
+      },
+      "reg_2409": {
+        "name": "D6. Przełącznik bypass AC3"
+      }
+    }
+  }
+}

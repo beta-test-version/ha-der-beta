@@ -1,0 +1,695 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "ha EcoFlow official verbinden",
+        "description": "Voer het adres in van de EcoFlow omvormer of Modbus-simulator",
+        "data": {
+          "host": "IP-adres",
+          "port": "Poort",
+          "unit_id": "Unit-ID",
+          "scan_interval": "Scan-interval (seconden)"
+        }
+      },
+      "zeroconf_confirm": {
+        "title": "ha EcoFlow official-apparaat gevonden",
+        "description": "{name} gevonden. Toevoegen?"
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken. Controleer IP/poort en of het apparaat actief is"
+    },
+    "abort": {
+      "already_configured": "Dit apparaat is al geconfigureerd"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "reg_0000": {
+        "name": "D1. Protocolversie"
+      },
+      "reg_0001": {
+        "name": "D1. Systeemfasetype",
+        "state": {
+          "1": "Driefasensysteem",
+          "2": "Eenfasensysteem"
+        }
+      },
+      "reg_0002": {
+        "name": "D1. Productnummer"
+      },
+      "reg_0003": {
+        "name": "D1. Serienummer apparaat (SN)"
+      },
+      "reg_000b": {
+        "name": "D1. Firmwareversie"
+      },
+      "reg_000e": {
+        "name": "D1. Fabrikant"
+      },
+      "reg_0016": {
+        "name": "S3. Omvormer totaal actief vermogen"
+      },
+      "reg_0017": {
+        "name": "S2. Omvormer totaal reactief vermogen"
+      },
+      "reg_0200": {
+        "name": "D5. Netcode"
+      },
+      "reg_0201": {
+        "name": "D1. UTC-tijd"
+      },
+      "reg_0205": {
+        "name": "D1. Tijdzone"
+      },
+      "reg_0206": {
+        "name": "S2. Systeemverbruiksvermogen"
+      },
+      "reg_0208": {
+        "name": "S2. Systeemnetvermogen"
+      },
+      "reg_020a": {
+        "name": "S2. Systeem-PV-vermogen"
+      },
+      "reg_020c": {
+        "name": "S2. Systeembatterijvermogen"
+      },
+      "reg_020e": {
+        "name": "S2. Systeem SOC"
+      },
+      "reg_020f": {
+        "name": "S3. Systeem nominaal vermogen"
+      },
+      "reg_0211": {
+        "name": "D1. Systeemstatus 1"
+      },
+      "reg_0213": {
+        "name": "D1. Systeemstatus 2"
+      },
+      "reg_0221": {
+        "name": "S3. Max actief uitgangsvermogen"
+      },
+      "reg_0223": {
+        "name": "S3. Max actief ingangsvermogen"
+      },
+      "reg_0225": {
+        "name": "S3. Omvormer uitgangsvermogen"
+      },
+      "reg_0227": {
+        "name": "S3. Batterij volledige capaciteit"
+      },
+      "reg_0229": {
+        "name": "S3. Batterij ontlaadcapaciteit"
+      },
+      "reg_022b": {
+        "name": "S3. Batterij laadcapaciteit"
+      },
+      "reg_022e": {
+        "name": "S3. Net fase A stroom"
+      },
+      "reg_0230": {
+        "name": "S3. Net fase B stroom"
+      },
+      "reg_0232": {
+        "name": "S3. Net fase C stroom"
+      },
+      "reg_0234": {
+        "name": "S3. Fase A spanning"
+      },
+      "reg_0236": {
+        "name": "S3. Fase B spanning"
+      },
+      "reg_0238": {
+        "name": "S3. Fase C spanning"
+      },
+      "reg_023d": {
+        "name": "D3. Batterijspanning"
+      },
+      "reg_023f": {
+        "name": "D3. Batterijstroom"
+      },
+      "reg_0241": {
+        "name": "D3. Batterijtemperatuur"
+      },
+      "reg_0243": {
+        "name": "D5. Omvormer fase A spanning"
+      },
+      "reg_0245": {
+        "name": "D5. Omvormer fase B spanning"
+      },
+      "reg_0247": {
+        "name": "D5. Omvormer fase C spanning"
+      },
+      "reg_0249": {
+        "name": "D5. Omvormer fase A stroom"
+      },
+      "reg_024b": {
+        "name": "D5. Omvormer fase B stroom"
+      },
+      "reg_024d": {
+        "name": "D5. Omvormer fase C stroom"
+      },
+      "reg_024f": {
+        "name": "D5. Omvormertemperatuur"
+      },
+      "reg_0251": {
+        "name": "D5. Omvormerfrequentie"
+      },
+      "reg_0253": {
+        "name": "D2. PV1 spanning"
+      },
+      "reg_0255": {
+        "name": "D2. PV2 spanning"
+      },
+      "reg_0257": {
+        "name": "D2. PV3 spanning"
+      },
+      "reg_0259": {
+        "name": "D2. PV1 stroom"
+      },
+      "reg_025b": {
+        "name": "D2. PV2 stroom"
+      },
+      "reg_025d": {
+        "name": "D2. PV3 stroom"
+      },
+      "reg_0260": {
+        "name": "S3. Effectief max terugleververmogen"
+      },
+      "reg_0262": {
+        "name": "D3. Batterijstatus"
+      },
+      "reg_0264": {
+        "name": "S2. Reactief vermogen (systeem)"
+      },
+      "reg_0266": {
+        "name": "S3. Nominaal max actief vermogen"
+      },
+      "reg_0267": {
+        "name": "S3. Max schijnbaar vermogen"
+      },
+      "reg_0268": {
+        "name": "S3. Max reactief uitgangsvermogen"
+      },
+      "reg_0269": {
+        "name": "S3. Max reactief ingangsvermogen"
+      },
+      "reg_0270": {
+        "name": "S3. PF-limiet (levering reactief)"
+      },
+      "reg_0271": {
+        "name": "S3. PF-limiet (opname reactief)"
+      },
+      "reg_0272": {
+        "name": "D3. Max laadcapaciteit"
+      },
+      "reg_0273": {
+        "name": "D3. Max ontlaadcapaciteit"
+      },
+      "reg_0800": {
+        "name": "S1. Huidig aantal systeemstoringen"
+      },
+      "reg_0801": {
+        "name": "S1. Systeemstoring code 1"
+      },
+      "reg_0802": {
+        "name": "S1. Systeemstoring code 2"
+      },
+      "reg_0803": {
+        "name": "S1. Systeemstoring code 3"
+      },
+      "reg_0804": {
+        "name": "S1. Systeemstoring code 4"
+      },
+      "reg_0805": {
+        "name": "S1. Systeemstoring code 5"
+      },
+      "reg_0806": {
+        "name": "S1. Systeemstoring code 6"
+      },
+      "reg_0807": {
+        "name": "S1. Systeemstoring code 7"
+      },
+      "reg_0808": {
+        "name": "S1. Systeemstoring code 8"
+      },
+      "reg_0809": {
+        "name": "S1. Systeemstoring code 9"
+      },
+      "reg_080a": {
+        "name": "S1. Systeemstoring code 10"
+      },
+      "reg_080b": {
+        "name": "S1. Systeemstoring code 11"
+      },
+      "reg_080c": {
+        "name": "S1. Systeemstoring code 12"
+      },
+      "reg_080d": {
+        "name": "S1. Systeemstoring code 13"
+      },
+      "reg_080e": {
+        "name": "S1. Systeemstoring code 14"
+      },
+      "reg_080f": {
+        "name": "S1. Systeemstoring code 15"
+      },
+      "reg_0810": {
+        "name": "S1. Systeemstoring code 16"
+      },
+      "reg_0811": {
+        "name": "S1. Systeemstoring code 17"
+      },
+      "reg_0812": {
+        "name": "S1. Systeemstoring code 18"
+      },
+      "reg_0813": {
+        "name": "S1. Systeemstoring code 19"
+      },
+      "reg_0814": {
+        "name": "S1. Systeemstoring code 20"
+      },
+      "reg_0820": {
+        "name": "D4. Aantal online batterijen"
+      },
+      "reg_0821": {
+        "name": "D4. Batterij 1 SOC"
+      },
+      "reg_0822": {
+        "name": "D4. Batterij 2 SOC"
+      },
+      "reg_0823": {
+        "name": "D4. Batterij 3 SOC"
+      },
+      "reg_0824": {
+        "name": "D4. Batterij 4 SOC"
+      },
+      "reg_0825": {
+        "name": "D4. Batterij 5 SOC"
+      },
+      "reg_0826": {
+        "name": "D4. Batterij 6 SOC"
+      },
+      "reg_0827": {
+        "name": "D4. Batterij 7 SOC"
+      },
+      "reg_0828": {
+        "name": "D4. Batterij 8 SOC"
+      },
+      "reg_0829": {
+        "name": "D4. Batterij 9 SOC"
+      },
+      "reg_082a": {
+        "name": "D4. Batterij 10 SOC"
+      },
+      "reg_082b": {
+        "name": "D4. Batterij 11 SOC"
+      },
+      "reg_082c": {
+        "name": "D4. Batterij 12 SOC"
+      },
+      "reg_0840": {
+        "name": "S4. Meter totale energie (vandaag)"
+      },
+      "reg_0850": {
+        "name": "S4. Omvormer totale energie (vandaag)"
+      },
+      "reg_0860": {
+        "name": "S4. Batterij totale energie (vandaag)"
+      },
+      "reg_0870": {
+        "name": "S4. Net importenergie (totaal)"
+      },
+      "reg_0872": {
+        "name": "S4. Net import (vandaag)"
+      },
+      "reg_0880": {
+        "name": "S4. Net exportenergie (totaal)"
+      },
+      "reg_0882": {
+        "name": "S4. Net export (vandaag)"
+      },
+      "reg_0890": {
+        "name": "S4. Omvormer laadenergie (totaal)"
+      },
+      "reg_0892": {
+        "name": "S4. Omvormer laden (vandaag)"
+      },
+      "reg_08a0": {
+        "name": "S4. Omvormer ontlaadenergie (totaal)"
+      },
+      "reg_08a2": {
+        "name": "S4. Omvormer ontladen (vandaag)"
+      },
+      "reg_08b0": {
+        "name": "S4. Batterij laadenergie (totaal)"
+      },
+      "reg_08b2": {
+        "name": "S4. Batterij laden (vandaag)"
+      },
+      "reg_08c0": {
+        "name": "S4. Batterij ontlaadenergie (totaal)"
+      },
+      "reg_08c2": {
+        "name": "S4. Batterij ontladen (vandaag)"
+      },
+      "reg_08d0": {
+        "name": "S4. Zonne-energie (totaal)"
+      },
+      "reg_08d2": {
+        "name": "S4. Zonne-energie (vandaag)"
+      },
+      "reg_1000": {
+        "name": "S1. Aantal systeemapparaten"
+      },
+      "reg_1001": {
+        "name": "D1. Systeem master-vlag"
+      },
+      "reg_1002": {
+        "name": "S1. Aantal online systeemapparaten"
+      },
+      "reg_1200": {
+        "name": "S4. Huisverbruik (totaal)"
+      },
+      "reg_1202": {
+        "name": "S4. Huisverbruik (vandaag)"
+      },
+      "reg_1300": {
+        "name": "S3. Fase A actief vermogen"
+      },
+      "reg_1302": {
+        "name": "S3. Fase B actief vermogen"
+      },
+      "reg_1304": {
+        "name": "S3. Fase C actief vermogen"
+      },
+      "reg_1400": {
+        "name": "S3. Batterij laadcapaciteit"
+      },
+      "reg_1401": {
+        "name": "S3. Batterij ontlaadcapaciteit"
+      },
+      "reg_2010": {
+        "name": "D1. Aantal apparaatfouten"
+      },
+      "reg_2011": {
+        "name": "D1. Apparaat foutcode 1"
+      },
+      "reg_2012": {
+        "name": "D1. Apparaat foutcode 2"
+      },
+      "reg_2013": {
+        "name": "D1. Apparaat foutcode 3"
+      },
+      "reg_2014": {
+        "name": "D1. Apparaat foutcode 4"
+      },
+      "reg_2015": {
+        "name": "D1. Apparaat foutcode 5"
+      },
+      "reg_2016": {
+        "name": "D1. Apparaat foutcode 6"
+      },
+      "reg_2017": {
+        "name": "D1. Apparaat foutcode 7"
+      },
+      "reg_2018": {
+        "name": "D1. Apparaat foutcode 8"
+      },
+      "reg_2019": {
+        "name": "D1. Apparaat foutcode 9"
+      },
+      "reg_201a": {
+        "name": "D1. Apparaat foutcode 10"
+      },
+      "reg_2100": {
+        "name": "D2. PV4 spanning"
+      },
+      "reg_2102": {
+        "name": "D2. PV4 stroom"
+      },
+      "reg_2104": {
+        "name": "D2. PV1 vermogen"
+      },
+      "reg_2106": {
+        "name": "D2. PV2 vermogen"
+      },
+      "reg_2108": {
+        "name": "D2. PV3 vermogen"
+      },
+      "reg_210a": {
+        "name": "D2. PV4 vermogen"
+      },
+      "reg_2202": {
+        "name": "D3. Minimale celtemperatuur"
+      },
+      "reg_2204": {
+        "name": "D3. Maximale celtemperatuur"
+      },
+      "reg_2206": {
+        "name": "D3. Max celspanning"
+      },
+      "reg_2207": {
+        "name": "D3. Min celspanning"
+      },
+      "reg_2300": {
+        "name": "D4. Batterij 1 SOH"
+      },
+      "reg_2301": {
+        "name": "D4. Batterij 2 SOH"
+      },
+      "reg_2302": {
+        "name": "D4. Batterij 3 SOH"
+      },
+      "reg_2303": {
+        "name": "D4. Batterij 4 SOH"
+      },
+      "reg_2304": {
+        "name": "D4. Batterij 5 SOH"
+      },
+      "reg_2305": {
+        "name": "D4. Batterij 6 SOH"
+      },
+      "reg_2306": {
+        "name": "D4. Batterij 7 SOH"
+      },
+      "reg_2307": {
+        "name": "D4. Batterij 8 SOH"
+      },
+      "reg_2308": {
+        "name": "D4. Batterij 9 SOH"
+      },
+      "reg_2309": {
+        "name": "D4. Batterij 10 SOH"
+      },
+      "reg_230a": {
+        "name": "D4. Batterij 11 SOH"
+      },
+      "reg_230b": {
+        "name": "D4. Batterij 12 SOH"
+      },
+      "reg_2310": {
+        "name": "D4. Batterij 1 SN"
+      },
+      "reg_2318": {
+        "name": "D4. Batterij 2 SN"
+      },
+      "reg_2320": {
+        "name": "D4. Batterij 3 SN"
+      },
+      "reg_2328": {
+        "name": "D4. Batterij 4 SN"
+      },
+      "reg_2330": {
+        "name": "D4. Batterij 5 SN"
+      },
+      "reg_2338": {
+        "name": "D4. Batterij 6 SN"
+      },
+      "reg_2340": {
+        "name": "D4. Batterij 7 SN"
+      },
+      "reg_2348": {
+        "name": "D4. Batterij 8 SN"
+      },
+      "reg_2350": {
+        "name": "D4. Batterij 9 SN"
+      },
+      "reg_2358": {
+        "name": "D4. Batterij 10 SN"
+      },
+      "reg_2360": {
+        "name": "D4. Batterij 11 SN"
+      },
+      "reg_2368": {
+        "name": "D4. Batterij 12 SN"
+      },
+      "reg_2400": {
+        "name": "D5. Net/off-grid status",
+        "state": {
+          "0": "Losgekoppeld van het net",
+          "1": "Verbonden met het net"
+        }
+      },
+      "reg_2401": {
+        "name": "D5. Bypass AC1 vermogen"
+      },
+      "reg_2404": {
+        "name": "D5. Bypass AC2 vermogen"
+      },
+      "reg_2407": {
+        "name": "D5. Bypass AC3 vermogen"
+      }
+    },
+    "number": {
+      "reg_000d": {
+        "name": "D1. Communicatieadres apparaat"
+      },
+      "reg_0215": {
+        "name": "S3. Systeem besturingsopdracht"
+      },
+      "reg_0217": {
+        "name": "S3. Backup reservepercentage"
+      },
+      "reg_0219": {
+        "name": "S3. Max terugleververmogen net"
+      },
+      "reg_021b": {
+        "name": "S3. Zekeringscapaciteit"
+      },
+      "reg_021c": {
+        "name": "D6. LED-helderheid"
+      },
+      "reg_021d": {
+        "name": "S3. Systeem vermogen instelpunt"
+      },
+      "reg_021f": {
+        "name": "S3. Omvormer vermogen instelpunt"
+      },
+      "reg_023a": {
+        "name": "S3. Batterij laad-/ontlaadinstelpunt"
+      },
+      "reg_023c": {
+        "name": "S3. Terugleverlimiet percentage"
+      },
+      "reg_0274": {
+        "name": "D5. Omvormer actief uitgangspercentage"
+      },
+      "reg_1003": {
+        "name": "D1. Host-verkiezingsprioriteit"
+      },
+      "reg_1600": {
+        "name": "S3. Batterij laadvermogenlimiet"
+      },
+      "reg_1602": {
+        "name": "S3. Batterij ontlaadvermogenlimiet"
+      },
+      "reg_1604": {
+        "name": "S3. Net importvermogenlimiet"
+      },
+      "reg_1606": {
+        "name": "S3. Net exportvermogenlimiet"
+      },
+      "reg_1608": {
+        "name": "S3. Omvormer uitgangsvermogenlimiet"
+      },
+      "reg_160a": {
+        "name": "S3. Omvormer ingangsvermogenlimiet"
+      },
+      "reg_160c": {
+        "name": "S3. Netpoort uitgangsvermogenlimiet"
+      },
+      "reg_160e": {
+        "name": "S3. Netpoort ingangsvermogenlimiet"
+      },
+      "reg_1611": {
+        "name": "S3. Batterij doelvermogen"
+      },
+      "reg_1612": {
+        "name": "S3. Meter doelvermogen"
+      },
+      "reg_1613": {
+        "name": "S3. Omvormer doelvermogen"
+      },
+      "reg_1614": {
+        "name": "S3. Netpoort doelvermogen"
+      },
+      "reg_2200": {
+        "name": "S3. SOC ondergrens"
+      },
+      "reg_2201": {
+        "name": "S3. SOC bovengrens"
+      }
+    },
+    "select": {
+      "reg_0218": {
+        "name": "S3. Teruglevermodus net",
+        "state": {
+          "0": "Beperkte modus",
+          "1": "Onbeperkte modus",
+          "2": "Percentagelimiet"
+        }
+      },
+      "reg_022d": {
+        "name": "S3. Systeembedrijfsmodus",
+        "state": {
+          "1": "Eigenverbruik",
+          "2": "AI-modus"
+        }
+      },
+      "reg_0263": {
+        "name": "S3. Batterij besturingsmodus",
+        "state": {
+          "0": "Op afstand",
+          "1": "Lokaal"
+        }
+      },
+      "reg_0275": {
+        "name": "S3. VPP-besturingsmodus (AU)",
+        "state": {
+          "0": "Eigenverbruik",
+          "1": "Systeemvermogen",
+          "2": "Omvormervermogen",
+          "3": "Batterijvermogen"
+        }
+      },
+      "reg_0277": {
+        "name": "S3. Batterijvermogenschakelaar (AU)",
+        "state": {
+          "0": "Laden en ontladen toestaan",
+          "1": "Laden uitgeschakeld",
+          "2": "Ontladen uitgeschakeld",
+          "3": "Beide uitgeschakeld"
+        }
+      },
+      "reg_1610": {
+        "name": "S3. Regelpunt",
+        "state": {
+          "0": "Geen",
+          "1": "Batterijpunt",
+          "2": "Meterpunt",
+          "3": "Omvormerpunt",
+          "4": "Netpunt"
+        }
+      }
+    },
+    "switch": {
+      "reg_0276": {
+        "name": "S3. Zachte start schakelaar (AU)"
+      },
+      "reg_0278": {
+        "name": "S3. Forceer off-grid (AU)"
+      },
+      "reg_2403": {
+        "name": "D6. Bypass AC1 schakelaar"
+      },
+      "reg_2406": {
+        "name": "D6. Bypass AC2 schakelaar"
+      },
+      "reg_2409": {
+        "name": "D6. Bypass AC3 schakelaar"
+      }
+    }
+  }
+}
